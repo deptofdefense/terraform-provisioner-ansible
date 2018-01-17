@@ -18,6 +18,12 @@ type ResourceProvisioner struct {
 	extraVars map[string]string // extra variables that can be passed to the provisioner
 }
 
+func(r *ResourceProvisioner) Stop() error {
+	// TODO: fix compilation error *ResourceProvisioner does not implement terraform.ResourceProvisioner (missing Stop method)
+	// Not fully implemented
+	return nil
+}
+
 func (r *ResourceProvisioner) Apply(
 	o terraform.UIOutput,
 	s *terraform.InstanceState,
